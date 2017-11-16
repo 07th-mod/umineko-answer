@@ -13,7 +13,7 @@ The release page contains installation instructions and patch files.
 
 ## Feedback and bug reports
 
-The patch is now fully released, however we still didn't kill all the bugs. If you find anything, first check if the bug has already been reported. If you've found a new bug, open a new issue and please include as much information as you can in the ['Issues'](https://github.com/07th-mod/umineko-answer/issues) section. The [Wiki](https://github.com/07th-mod/umineko-answer/wiki) also contains some bug information.
+The patch is still in progress, and all we want is to kill all the bugs. If you find anything, first check if the bug has already been reported. If you've found a new bug, open a new issue and please include as much information as you can in the ['Issues'](https://github.com/07th-mod/umineko-answer/issues) section. The [Wiki](https://github.com/07th-mod/umineko-answer/wiki) also contains some bug information.
 
 We really appreciate your help!
 
