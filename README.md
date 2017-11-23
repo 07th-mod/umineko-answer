@@ -1,11 +1,10 @@
 # Umineko no Naku Koro ni (Answer Arcs) - PS3 Voice and graphics patch
 
-> Calm down, this is pretty much a placeholder. The game will be released on November 17th and the patch will only reach a playable, stable release some time after that. **There are no public releases this moment**.
-
 This patch aims to modify the newest release of Umineko by MangaGamer, changing its assets to replicate the PS3 version of the game.
 It is compatible with the Steam version ***and*** the MangaGamer DRM-free download. See the roadmap below for current patch status.
 
 ## Latest Release
+> **Update (November 23th): Voice patch is now available.**
 
 The release page contains installation instructions and patch files.
 
@@ -22,7 +21,7 @@ We really appreciate your help!
 
 The patch is currently **in progress**
 
-- [ ] Voices
+- [x] Voices
 - [ ] Sprites
 - [ ] Backgrounds
 - [ ] Effects
