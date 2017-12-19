@@ -22,8 +22,8 @@ We really appreciate your help!
 The patch is currently **in progress**
 
 - [x] Voices
-- [ ] Sprites
-- [ ] Backgrounds
-- [ ] Effects
-- [ ] CGs
+- [x] Sprites (Testing)
+- [x] Backgrounds
+- [x] Effects (Testing)
+- [x] CGs (Testing)
 - [ ] Menus
