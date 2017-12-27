@@ -19,7 +19,7 @@ We really appreciate your help!
 The patch is currently **in progress**
 
 - [x] Voices
-- [x] Sprites (Testing)
+- [x] Sprites 
 - [x] Backgrounds
 - [x] Effects (Testing)
 - [x] CGs (Testing)
