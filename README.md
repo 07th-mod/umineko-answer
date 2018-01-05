@@ -21,6 +21,6 @@ The patch is currently **in progress**
 - [x] Voices
 - [x] Sprites 
 - [x] Backgrounds
-- [x] Effects (Testing)
-- [x] CGs (Testing)
-- [ ] Menus
+- [x] Effects 
+- [x] CGs 
+- [x] Menus
