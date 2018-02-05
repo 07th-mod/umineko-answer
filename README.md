@@ -4,7 +4,6 @@ This patch aims to modify the newest release of Umineko by MangaGamer, changing 
 It is compatible with the Steam version ***and*** the MangaGamer DRM-free download. See the roadmap below for current patch status.
 
 ## Latest Release / Install Instructions
-> **Update (November 23th): Voice patch is now available.**
 
 See the Getting Started guide: https://github.com/07th-mod/guide/wiki/Umineko-Getting-started
 
@@ -16,7 +15,7 @@ We really appreciate your help!
 
 ## Roadmap
 
-The patch is currently **in progress**
+The patch is currently **playable** but still in development.
 
 - [x] Voices
 - [x] Sprites 
