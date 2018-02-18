@@ -1,3 +1,9 @@
+# Please Read!
+
+If you a **user**, just download the pre-patched binaries from here: https://github.com/07th-mod/guide/wiki/Umineko-Getting-started
+
+This page is only for developers.
+
 ## Important
 The default resolution has been set to 1920 x 1080 (original game was 1280x960).
 
