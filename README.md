@@ -3,6 +3,10 @@
 This patch aims to modify the newest release of Umineko by MangaGamer, changing its assets to replicate the PS3 version of the game.
 It is compatible with the Steam version ***and*** the MangaGamer DRM-free download. See the roadmap below for current patch status.
 
+## Latest Release / Install Instructions
+
+See the Getting Started guide: https://github.com/07th-mod/guide/wiki/Umineko-Getting-started
+
 # Warning - Steam Updates
 
 Recent steam updates have been breaking patch installations. If you are an existing user, please read the below.
@@ -40,10 +44,6 @@ If you find that your saves are suddenly missing, then
 If you get a 'No game script found' error, likely you didn't rename `0.utf` to `0.u`
 
 If your opening videos (there are two different ones) play very small and are the old sprites, likely your opening video was overriden by steam. If you wish you can re-download the graphics patch and apply it to get the videos. This will be fixed in future releases by renaming those videos.
-
-## Latest Release / Install Instructions
-
-See the Getting Started guide: https://github.com/07th-mod/guide/wiki/Umineko-Getting-started
 
 ## Feedback and bug reports
 
