@@ -48,13 +48,13 @@ with open(args.filename, "rb") as f:
     print("\tWidth : [{}] -> [{}]".format(getInstructionString(widthPattern), getInstructionString(newWidthPattern)))
 
     #substitute the old byte sequence with the new byte sequence. Only replace the first instance
-    (exe_byte_array, n_height_subs) = re.subn(heightPattern, newHeightPattern, exe_byte_array, count=1)
+    (exe_byte_array, n_height_subs) = re.subn(re.escape(heightPattern), newHeightPattern, exe_byte_array, count=1)
     if n_height_subs != 1:
         print("Error: couldn't patch set height instruction!")
         exit(0)
     print(n_height_subs, "Height values patched successfully")
 
-    (exe_byte_array, n_width_subs) = re.subn(widthPattern, newWidthPattern, exe_byte_array, count=1)
+    (exe_byte_array, n_width_subs) = re.subn(re.escape(widthPattern), newWidthPattern, exe_byte_array, count=1)
     if n_width_subs != 1:
         print("Error: couldn't patch set width instruction!")
         exit(0)

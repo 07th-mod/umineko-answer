@@ -15,7 +15,7 @@ with open(r'widescreen-1920x1080-Umineko5to8', "rb") as f:
     area_to_patch = exe_byte_array_raw[352576:]
 
     #substitute the old byte sequence with the new byte sequence. Only replace the first instance
-    (area_to_patch, n_height_subs) = re.subn(leaPattern, newLeaPattern, area_to_patch)
+    (area_to_patch, n_height_subs) = re.subn(re.escape(leaPattern), newLeaPattern, area_to_patch)
     print('Replacemnts Made:', n_height_subs)
     if n_height_subs != 2:
         print("Error: couldn't patch set height instruction!")

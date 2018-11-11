@@ -9,7 +9,7 @@ with open(r'Umineko5to8w.exe', "rb") as f:
     exe_byte_array = f.read()
 
     #substitute the old byte sequence with the new byte sequence. Only replace the first instance
-    (exe_byte_array, n_height_subs) = re.subn(leaPattern, newLeaPattern, exe_byte_array)
+    (exe_byte_array, n_height_subs) = re.subn(re.escape(leaPattern), newLeaPattern, exe_byte_array)
     print('Replacemnts Made:', n_height_subs)
     if n_height_subs != 2:
         print("Error: couldn't patch set height instruction!")

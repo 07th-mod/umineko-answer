@@ -53,7 +53,7 @@ for file_to_patch in get_input_files():
             #check number of time of the search string occurs in the file, as a check
             num_ocurrances = len(re.findall(before_string + b'\x00', exe_byte_array))
 
-            (exe_byte_array, num_replacements) = re.subn(before_string + b'\x00', after_string + b'\x00', exe_byte_array, count=max_replacements)
+            (exe_byte_array, num_replacements) = re.subn(re.escape(before_string + b'\x00'), after_string + b'\x00', exe_byte_array, count=max_replacements)
             print('Replaced String {} to {} {} times (occurs {} times in file)'.format(before_string, after_string, num_replacements, num_ocurrances))
             if num_replacements == 0:
                 print("Error: couldn't patch {} string to {}".format(before_string, after_string))
