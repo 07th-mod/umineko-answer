@@ -1,6 +1,10 @@
 import re
 import os
 
+#Note: Recently I used the following settings to change the MacOS exe since they just use '0.utf' and not '0.u':
+
+# defaultErrorString = b"The script file '0.u' is missing from the game directory. You probably forgot to rename '0.utf' to '0.u'."
+# newErrorString = b"Error (07th mod): The script file '0.utf' is missing from the game directory. https://discord.gg/acSbBtD"
 
 #these error strings appear when the 0.utf/0.u cannot be found
 defaultErrorString = b'No game script found. This application must be run from a directory containing NScripter, ONScripter, or Ponscripter game data.'
