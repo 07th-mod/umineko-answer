@@ -49,7 +49,8 @@ with open('sprite_diff.txt', 'r', encoding='utf-8') as sprite_diff_file:
 with open(r'C:\drojf\large_projects\umineko\umineko-answer\0.utf', 'r', encoding='utf-8') as sprite_diff_file:
     currentScriptAllLines = sprite_diff_file.readlines()
 
-change_clothes_command = re.compile(r'^mov[^_]+_Isyou', re.IGNORECASE)
+change_clothes_simple = re.compile(r'^mov([^_]+)_Isyou')
+change_clothes_command = re.compile(r'^mov\s+%([^_]+)_Isyou\s*,\s*(\d+)', re.IGNORECASE)
 
 
 chapter_start = re.compile(r'^\*umi[5678]', re.IGNORECASE) #start of chapter or subchapter
@@ -73,13 +74,20 @@ reset_regexes = [eye_command, chapter_start, teatime_start, question_mark_teatim
 # As all? the outfits are used, should be pretty easy to identify these cases.
 
 for line in diffAllLines:
-    # match = change_clothes_command.search(line[1:])
-    # if match:
-    #     print(line)
-    #
+    fullMatch = change_clothes_command.search(line[1:])
+    if fullMatch:
+        print(fullMatch.group(1), fullMatch.group(2), line)
+
+    #check for irregular clothes change lines
+    simpleMatch = change_clothes_simple.search(line[1:])
+    if simpleMatch and not fullMatch:
+        print("ERROR: irregular line", line)
+        exit(-1)
+
+
     for reg in reset_regexes:
-        match = reg.search(line[1:])
-        if match:
+        resetMatch = reg.search(line[1:])
+        if resetMatch:
             print(line)
 
     # if line[0] == '+' or line[0] == '-':
