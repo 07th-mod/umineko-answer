@@ -1,3 +1,4 @@
+from collections import defaultdict, Counter
 from typing import Dict
 
 
@@ -18,6 +19,17 @@ class SpriteModeLookup:
 
     def reset_sprite_types(self):
         self.map.clear()
+
+
+class SpriteCounter:
+    def __init__(self):
+        self.map = defaultdict(Counter)
+
+    def add_value(self, key, value):
+        self.map[key][value] += 1
+
+    def get_value(self, key):
+        return self.map[key]
 
 
 def get_old_sprite_path(name, expression, variant):
