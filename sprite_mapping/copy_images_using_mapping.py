@@ -5,8 +5,16 @@ import shutil
 output_base_path = r'c:\temp\ps3_output'
 old_sprite_base_path = r'C:\games\Steam\steamapps\common\Umineko Chiru\NSA_ext\big'
 
-# TODO: look for duplicate entries
+if os.path.exists('big'):
+    output_base_path = 'ps3_output'
+    old_sprite_base_path = 'big'
 
+debug_expected_old_path = os.path.join(old_sprite_base_path, 'bmp\\tati')
+if not os.path.exists(debug_expected_old_path):
+    print(f"Can't find the 'tati' folder containing the old pachinko sprites in {debug_expected_old_path}. Please copy in the pachinko files to {debug_expected_old_path}.")
+    exit(-1)
+
+# TODO: look for duplicate entries
 with open('mapping_custom.csv', 'r', newline='') as csvfile:
     reader = csv.reader(csvfile)
 
