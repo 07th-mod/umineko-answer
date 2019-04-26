@@ -51,6 +51,8 @@ def generate_chunks():
                 # print(line)
                 sprite_clothes_lookup.reset_sprite_types()
 
+        # TODO: chunking should take into account lines with spaces only - in that case should treat as the same chunk.
+        # There seem to be enough matches so it turns out OK, except for rarely used sprites.
         # '+' -> check for a old character sprite alias
         # '-' -> check for ps3 sprite path
         # ' ' -> start a new chunk of '+' and '-' type lines
@@ -103,7 +105,9 @@ def convert_frequency_list_to_percentage(l : List[Tuple[str, int]]):
 def get_best_match(ps3_sprite_path : str, old_sprites_sorted : List[Tuple[str, int]]):
     percent_list = convert_frequency_list_to_percentage(old_sprites_sorted)
 
-    if len(percent_list) == 1:
+    # TODO: don't match if there is only one match in the list, as the uncertainty is high - do some other method of matching
+    # Currently check for at least 2 matches if there is only one type of sprite matched
+    if len(percent_list) == 1 and old_sprites_sorted[0][1] > 1:
         return percent_list[0]
     elif percent_list[0][1] > 80:
         return percent_list[0]
@@ -111,7 +115,7 @@ def get_best_match(ps3_sprite_path : str, old_sprites_sorted : List[Tuple[str, i
         ps3_sprite_path_no_ext = ps3_sprite_path.replace(".png", '')
         ps3_expression = ps3_sprite_path_no_ext.split('_')[-1]
 
-        old_expressions = [value.split('_')[-1] for value in v]
+        old_expressions = [value[0].split('_')[-1] for value in old_sprites_sorted]
         old_expressions_noletter = [x[:-2] + x[-1] for x in old_expressions]
 
         for i in range(0, len(old_expressions_noletter)):
