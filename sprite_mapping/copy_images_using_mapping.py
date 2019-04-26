@@ -5,6 +5,8 @@ import shutil
 output_base_path = r'c:\temp\ps3_output'
 old_sprite_base_path = r'C:\games\Steam\steamapps\common\Umineko Chiru\NSA_ext\big'
 
+# TODO: look for duplicate entries
+
 with open('mapping_custom.csv', 'r', newline='') as csvfile:
     reader = csv.reader(csvfile)
 
@@ -14,6 +16,10 @@ with open('mapping_custom.csv', 'r', newline='') as csvfile:
 
         ps3_filepath = row[0] #already has .png
         old_filepath = row[1] + '.png'
+
+        if 'NO MATCH' in old_filepath:
+            print("Skipping row as no match: ", row)
+            continue
 
         invalid = False
         if 'sprites' in old_filepath:
