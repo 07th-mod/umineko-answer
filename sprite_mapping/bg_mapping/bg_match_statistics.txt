@@ -1,7 +1,6 @@
 -----------Result ---------------
 Armor0 maps to [('garden_r1an', 2), ('beach_l1an', 1), ('moon_1bn', 1)]
 Armor7b maps to [('Armor7b', 2), ('red_b', 1)]
-BITE maps to [('bite', 1), ('BITE', 1)]
 BLADE1B maps to [('blade1b', 3)]
 BLADE1P maps to [('blade1p', 1)]
 BLADE1R maps to [('blade1r', 4), ('BLADE1R', 2)]
@@ -739,7 +738,7 @@ forest_S1b maps to [('forest_s1af', 5), ('rose_g1a', 2), ('forest_s1ac', 2), ('f
 forest_s1a maps to [('forest_s1ac', 1)]
 forest_s1b maps to [('forest_s1af', 1)]
 garden_1a maps to [('garden_1a', 3), ('garden_1ac', 2), ('garden_1cf', 1)]
-garden_1aN maps to [('garden_1ar', 4), ('m_o2an_r', 1), ('chain2r_sp', 1)]
+garden_1aN maps to [('garden_1ar', 4), ('m_o2an_r', 1)]
 garden_1aR maps to [('rose_1an', 1), ('garden_1ar', 1)]
 garden_1ar maps to [('garden_1ar', 1)]
 garden_1b maps to [('garden_1af', 5), ('garden_1cc', 3), ('garden_1ac', 1), ('garden_1a', 1), ('ex01', 1), ('garden_r1ac', 1), ('garden_1cf', 1)]
