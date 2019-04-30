@@ -1,5 +1,7 @@
+import glob
 import os
 import re
+from util import get_with_file_extension
 from typing import Tuple, List
 
 tuple_regex = re.compile(r"""\('([^']*)', (\d+)""")
@@ -8,11 +10,9 @@ stralias_regex = re.compile(r"""stralias\s+([^,]+)\s*,\s*"([^"]+)""")
 image_modifier_regex = re.compile(r':[^;]+;')
 
 umineko_answer_script_input = r'C:\drojf\large_projects\umineko\umineko-answer\0.utf' #use to extract straliases
+only_used_images_folder = r'C:\temp\only_used_bg\bg'
 
-def get_with_file_extension(file_path : str, new_extension_with_dot : str):
-    path_no_ext, ext = os.path.splitext(file_path)
-    return path_no_ext + new_extension_with_dot
-
+map_by_filename_path  = r'..\map_by_filename\map_by_filename.txt'
 
 def deserialize_tuple_list(s : str) -> List[Tuple[str, int]]:
     stripped = s.strip().strip('[]')
@@ -56,10 +56,38 @@ with open('bg_match_statistics.txt', 'r', encoding='utf-8') as statistics_file:
 
         mangagamer_path_to_ps3_path.append((mangagamer_path, [get_with_file_extension(x[0],'.png') for x in ps3_bg_name_tuples]))
 
+# Check if any ps3 backgrounds were never replaced
+all_ps3_paths = set()
+for mangagamer_path, ps3_paths in mangagamer_path_to_ps3_path:
+    for ps3_path in ps3_paths:
+        all_ps3_paths.add(ps3_path.lower())
+
+# load in the mapping by filename
+map_by_filename_mapping = {}
+with open(map_by_filename_path, 'r') as inputFile:
+    for line in inputFile:
+        ps3_name, mg_path = line.strip().split('|')
+        print(ps3_name)
+        map_by_filename_mapping[ps3_name] = mg_path
+
+alternative_mg_to_ps3_paths = []
+
+scanpath = os.path.join(only_used_images_folder,'**')
+for used_ps3_path in glob.glob(scanpath, recursive=True):
+    used_ps3_filename = os.path.basename(used_ps3_path)
+    if used_ps3_filename.lower() not in all_ps3_paths:
+        # print(f"{used_ps3_filename} was NOT covered!")
+        used_ps3_name, _ = os.path.splitext(used_ps3_filename)
+        alternate_mangagamer_mapping = map_by_filename_mapping.get(used_ps3_name.lower(), None)
+        if alternate_mangagamer_mapping:
+            print(f"Will use {used_ps3_name} -> {alternate_mangagamer_mapping} alternate mapping")
+            alternative_mg_to_ps3_paths.append((os.path.join(r'bmp\background', alternate_mangagamer_mapping), [used_ps3_filename]))
+        else:
+            print(f"No mapping for {used_ps3_name}")
+
 with open('simple_bg_mapping.txt', 'w') as simple_bg_mapping_file:
-    for item in mangagamer_path_to_ps3_path:
-        mangagamer_path = item[0]
-        ps3_paths_to_copy_to = [x for x in item[1] if x not in ['black.png', 'white.png']]
+    for mangagamer_path, ps3_paths in mangagamer_path_to_ps3_path + alternative_mg_to_ps3_paths:
+        ps3_paths_to_copy_to = [x for x in ps3_paths if x not in ['black.png', 'white.png']]
 
         if mangagamer_path in ['black.png', 'white.png']:
             continue
