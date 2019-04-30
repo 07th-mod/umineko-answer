@@ -28,6 +28,9 @@ class SpriteCounter:
     def add_value(self, key, value):
         self.map[key][value] += 1
 
+    def add_score(self, key, value, score):
+        self.map[key][value] += score
+
     def get_value(self, key):
         return self.map[key]
 

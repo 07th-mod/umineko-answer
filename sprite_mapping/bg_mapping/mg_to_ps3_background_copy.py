@@ -15,15 +15,17 @@ if not os.path.exists(debug_expected_old_path):
     print(f"Can't find the 'bmp' folder containing the old backgrounds {debug_expected_old_path}. Please copy in the pachinko files to {debug_expected_old_path}.")
     exit(-1)
 
+report = []
+
 with open('simple_bg_mapping.txt', 'r') as simple_bg_mapping_file:
     for line in simple_bg_mapping_file.readlines():
-        items = line.split()
-        mg_path = items[0]
-        ps3_path_list = items[1:]
+        ps3_path, mg_path = line.split('|')
+        ps3_path = ps3_path.strip()
+        mg_path = mg_path.strip()
 
         # full_ps3_filepath = os.path.join(output_base_path, ps3_filepath)
         full_mg_bg_path = os.path.join(old_sprite_base_path, mg_path)
-        full_ps3_bg_paths = [os.path.join(output_base_path, x) for x in ps3_path_list]
+        full_ps3_bg_path = os.path.join(output_base_path, ps3_path)
 
         if '\\efe\\' in mg_path:
             whitelisted = False
@@ -39,10 +41,12 @@ with open('simple_bg_mapping.txt', 'r') as simple_bg_mapping_file:
             print(f"Old sprite missing! {full_mg_bg_path}")
             continue
 
-        print('will copy', full_mg_bg_path, 'to')
-        for path in full_ps3_bg_paths:
-            print(path)
+        report.append(f'will copy {full_mg_bg_path} to {full_ps3_bg_path}')
 
-        for full_ps3_path in full_ps3_bg_paths:
-            os.makedirs(os.path.dirname(full_ps3_path), exist_ok=True)
-            shutil.copy(full_mg_bg_path, full_ps3_path)
+        os.makedirs(os.path.dirname(full_ps3_bg_path), exist_ok=True)
+        shutil.copy(full_mg_bg_path, full_ps3_bg_path)
+
+print('---------------------------------------------------------------------------------------------------------------')
+
+for line in report:
+    print(line)
