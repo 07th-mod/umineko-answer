@@ -1,6 +1,7 @@
 from __future__ import annotations
 import glob
 import os
+from util import get_with_file_extension
 
 def splitByNumber(s):
     # the first position is always assumed to be a alpha
@@ -62,7 +63,7 @@ def get_file_name_list(folder_to_scan):
             filename_with_ext = os.path.basename(path)
             name, ext = os.path.splitext(filename_with_ext)
 
-            retval.append((name, path))
+            retval.append((name, os.path.relpath(get_with_file_extension(path, '.png'), folder_to_scan)))
 
             #
             # print(name, *splitName(name))
@@ -125,9 +126,11 @@ for ps3_info in ps3_infos:
     # print([x[0] for x in mg_score_and_info[0:3]])
     final_mapping[ps3_info] = mg_score_and_info[0]
 
-for ps3_info,(score, mg_info)in final_mapping.items():
-    if score < 10:
-        print("failed to match", ps3_info.name)
-        continue
+with open('map_by_filename.txt', 'w') as outfile:
+    for ps3_info,(score, mg_info)in final_mapping.items():
+        if score < 10:
+            print("failed to match", ps3_info.name)
+            continue
 
-    print(f"{ps3_info.name} -> {mg_info.name}")
+        print(f"{ps3_info.name} -> {mg_info.name} {mg_info.path}")
+        outfile.write(f"{ps3_info.name}|{mg_info.path}\n")
