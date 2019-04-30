@@ -172,9 +172,42 @@ for i, (ps3_path, _) in enumerate(best_ps3_to_mg_mapping):
 
 ########################################################################################################################
 
-forced_overrides = {'door_00096.png' : r'bmp\background\garden\m_door4.png'}
+forced_overrides = {'door_00096.png': r'bmp\background\garden\m_door4.png',
+                    'fea_r1ij.png': r'bmp\background\fea\fea_r1j.png',
+                    'garden_1cp.png': r'bmp\background\garden\garden_1c.png',
+                    'm_door3k.png': r'bmp\background\mainbuilding\m_door2.png',
+                    'm_door5.png': r'bmp\background\mainbuilding\m_door1.png',  #this is an image of a door with tape with a bernkastel's name on it
+                    'garden_1a.png' : r'bmp\background\garden\garden_1br.png',  #rain - building and roses
+                    'garden_1ac.png' : r'bmp\background\garden\garden_1b.png',  #normal
+                    'garden_1af.png' : r'bmp\background\garden\garden_1b.png',  #bright
+                    'garden_1ar.png' : r'bmp\background\garden\garden_1bn.png',  #night
+                    'garden_1c.png': r'bmp\background\garden\garden_1cr.png',  # rain - building and roses
+                    'garden_1cc.png': r'bmp\background\garden\garden_1c.png',  # normal
+                    'garden_1cf.png': r'bmp\background\garden\garden_1c.png',  # bright
+                    'garden_1cn.png': r'bmp\background\garden\garden_1cn.png',  # night
+                    'garden_r1a.png': r'bmp\background\garden\garden_r1ar.png',  # rain - building and roses
+                    'garden_r1ac.png': r'bmp\background\garden\garden_r1a.png',  # normal
+                    'garden_r1af.png': r'bmp\background\garden\garden_r1a.png',  # bright
+                    'garden_r1an.png': r'bmp\background\garden\garden_r1an.png',  # night
+                    }
 
-forced_ignore = ['anm_no0019b.png', 'anm_no0020a.png', 'blue.png', 'cake_a.png', 'chain2r_sp.png']
+forced_ignore = ['anm_no0019b.png',
+                 'anm_no0020a.png',
+                 'blue.png',
+                 'cake_a.png',
+                 'chain2r_sp.png'
+                 # these are the doors at the end of the game. Can't remove them because it has the scrolling effect,
+                 # and need to maintain consistency with that effect
+                 'm_door4.png',
+                 'm_door4_l.png',
+                 'm_door4c.png'
+                 'm_door4l.png',
+                 ]
+
+# Image which were replaced kind of properly but need fixing
+#'goas_eye2c_cha'  # I think a custom image needs to be made for this one - it's eyes overlaid on the dark chapel 'cha'
+#'goas_eye2c_cha2'
+#'m_door1_nega' - negative colored door image...
 
 with open('simple_bg_mapping.txt', 'w') as simple_bg_mapping_file:
     for ps3_path, mangagamer_path in best_ps3_to_mg_mapping + alternative_mg_to_ps3_paths:
