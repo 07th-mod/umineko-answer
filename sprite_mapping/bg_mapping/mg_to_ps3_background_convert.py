@@ -213,6 +213,7 @@ forced_overrides = {
 }
 
 forced_ignore = [
+'.png',
 'anm_no0019b.png',
 'anm_no0020a.png',
 'blue.png',
