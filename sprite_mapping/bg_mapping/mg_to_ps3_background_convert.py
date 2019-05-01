@@ -199,22 +199,32 @@ forced_overrides = {
 'm1f_r1af':r'bmp\background\guesthouse\g1f_r1a.png', #desk bright
 'm1f_r1am':r'bmp\background\guesthouse\g1f_r1an.png', #desk night
 'm1f_r1ar':r'bmp\background\guesthouse\g1f_r1ar.png', #desk rain
+'ros_p1a':r'bmp\background\rosehouse\ros_p1an.png'
 }
 
-forced_ignore = ['anm_no0019b.png',
-                 'anm_no0020a.png',
-                 'blue.png',
-                 'cake_a.png',
-                 'chain2r_sp.png'
-                 # these are the doors at the end of the game. Can't remove them because it has the scrolling effect,
-                 # and need to maintain consistency with that effect
-                 'm_door4.png',
-                 'm_door4_l.png',
-                 'm_door4c.png'
-                 'm_door4l.png',
-                 'door_00096.png', #: r'bmp\background\garden\m_door4.png',
-                 # end doors
-                 ]
+forced_ignore = [
+'anm_no0019b.png',
+'anm_no0020a.png',
+'blue.png',
+'cake_a.png',
+'chain2r_sp.png'
+# these are the doors at the end of the game. Can't remove them because it has the scrolling effect,
+# and need to maintain consistency with that effect
+'m_door4.png',
+'m_door4_l.png',
+'m_door4c.png'
+'m_door4l.png',
+'door_00096.png', #: r'bmp\background\garden\m_door4.png',
+# end doors
+# these are the portraits - they are identical in both versions of the game, but the ps3 ones are higher res
+'portrait1.png',
+'portrait2.png',
+'portrait3.png',
+'portrait4.png', #this is never used in the Answer arcs I think
+'portrait5.png',
+'portrait6.png',
+'red.png', #this is like a blood/cloud background image with a texture on it.
+]
 
 # Image which were replaced kind of properly but need fixing
 #'fea_k3_green' - fea meta with eyes overlaid - mg has no eyes
@@ -225,6 +235,8 @@ forced_ignore = ['anm_no0019b.png',
 #'hibun' - no matching mg image?
 #'m_door2hp' - door with purple metaworld effect
 #'mbat_1ap' - bath with purple metaworld effect
+#'view_efe2_full' - These two images are peeking through door images. on their own their replacement is fine, but there
+#'view_efe3_fill'   is an effect later on when you can see through a gap in the door, which only has a ps3 version currently.
 
 with open('simple_bg_mapping.txt', 'w') as simple_bg_mapping_file:
     for ps3_path, mangagamer_path in best_ps3_to_mg_mapping + alternative_mg_to_ps3_paths:
