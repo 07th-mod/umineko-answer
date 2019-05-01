@@ -9,6 +9,11 @@ from util import get_with_file_extension
 from typing import Tuple, List
 import operator
 
+# this path is only used to check manual override images actually exist (expect .png format images)
+debug_check_mg_path = r'C:\temp\umiconv'
+def check_mg_path_exists(path):
+    return os.path.exists(os.path.join(debug_check_mg_path, path))
+
 tuple_regex = re.compile(r"""\('([^']*)', (\d+)""")
 
 stralias_regex = re.compile(r"""stralias\s+([^,]+)\s*,\s*"([^"]+)""")
@@ -172,42 +177,85 @@ for i, (ps3_path, _) in enumerate(best_ps3_to_mg_mapping):
 
 ########################################################################################################################
 
-forced_overrides = {'door_00096.png': r'bmp\background\garden\m_door4.png',
-                    'fea_r1ij.png': r'bmp\background\fea\fea_r1j.png',
-                    'garden_1cp.png': r'bmp\background\garden\garden_1c.png',
-                    'm_door3k.png': r'bmp\background\mainbuilding\m_door2.png',
-                    'm_door5.png': r'bmp\background\mainbuilding\m_door1.png',  #this is an image of a door with tape with a bernkastel's name on it
-                    'garden_1a.png' : r'bmp\background\garden\garden_1br.png',  #rain - building and roses
-                    'garden_1ac.png' : r'bmp\background\garden\garden_1b.png',  #normal
-                    'garden_1af.png' : r'bmp\background\garden\garden_1b.png',  #bright
-                    'garden_1ar.png' : r'bmp\background\garden\garden_1bn.png',  #night
-                    'garden_1c.png': r'bmp\background\garden\garden_1cr.png',  # rain - building and roses
-                    'garden_1cc.png': r'bmp\background\garden\garden_1c.png',  # normal
-                    'garden_1cf.png': r'bmp\background\garden\garden_1c.png',  # bright
-                    'garden_1cn.png': r'bmp\background\garden\garden_1cn.png',  # night
-                    'garden_r1a.png': r'bmp\background\garden\garden_r1ar.png',  # rain - building and roses
-                    'garden_r1ac.png': r'bmp\background\garden\garden_r1a.png',  # normal
-                    'garden_r1af.png': r'bmp\background\garden\garden_r1a.png',  # bright
-                    'garden_r1an.png': r'bmp\background\garden\garden_r1an.png',  # night
-                    }
+forced_overrides = {
+'fea_r1ij.png': r'bmp\background\fea\fea_r1j.png',
+'garden_1cp.png': r'bmp\background\garden\garden_1c.png',
+'m_door3k.png': r'bmp\background\mainbuilding\m_door2.png',
+'m_door5.png': r'bmp\background\mainbuilding\m_door1.png',  #this is an image of a door with tape with a bernkastel's name on it
+'garden_1a.png' : r'bmp\background\garden\garden_1br.png',  #rain - building and roses
+'garden_1ac.png' : r'bmp\background\garden\garden_1b.png',  #normal
+'garden_1af.png' : r'bmp\background\garden\garden_1b.png',  #bright
+'garden_1ar.png' : r'bmp\background\garden\garden_1bn.png',  #night
+'garden_1c.png': r'bmp\background\garden\garden_1cr.png',  # rain - building and roses
+'garden_1cc.png': r'bmp\background\garden\garden_1c.png',  # normal
+'garden_1cf.png': r'bmp\background\garden\garden_1c.png',  # bright
+'garden_1cn.png': r'bmp\background\garden\garden_1cn.png',  # night
+'garden_r1a.png': r'bmp\background\garden\garden_r1ar.png',  # rain - building and roses
+'garden_r1ac.png': r'bmp\background\garden\garden_r1a.png',  # normal
+'garden_r1af.png': r'bmp\background\garden\garden_r1a.png',  # bright
+'garden_r1an.png': r'bmp\background\garden\garden_r1an.png',  # night
+'gdin_1ad.png': r'bmp\background\guesthouse\gdin_1b.png',
+'gdin_1ad2.png': r'bmp\background\guesthouse\gdin_1c.png',
+'m_o2a.png': r'bmp\background\mainbuilding\m_o1b.png',
+'m_o2an.png': r'bmp\background\mainbuilding\m_o1bn.png',
+'m_o2an_r.png': r'bmp\background\mainbuilding\m_o1br.png',
+'m_o2ar.png': r'bmp\background\mainbuilding\m_o1br.png',
+'m1f_r1a.png':r'bmp\background\guesthouse\g1f_r1a.png', #desk normal
+'m1f_r1af.png':r'bmp\background\guesthouse\g1f_r1a.png', #desk bright
+'m1f_r1am.png':r'bmp\background\guesthouse\g1f_r1an.png', #desk night
+'m1f_r1ar.png':r'bmp\background\guesthouse\g1f_r1ar.png', #desk rain
+'ros_p1a.png':r'bmp\background\rosehouse\ros_p1an.png',
+'cha_i1ed.png': r'bmp\background\chapel\cha_i1j.png', #chapel stained glass window
+'cha_i1ny.png': r'bmp\background\chapel\cha_i1n.png', #chapel pews
+'m2f_r7a.png':r'bmp\background\mainbuilding\m2f_r1d.png',    #lamp
+'m2f_r7ar.png':r'bmp\background\mainbuilding\m2f_r1dr.png'    #lamp
+}
 
-forced_ignore = ['anm_no0019b.png',
-                 'anm_no0020a.png',
-                 'blue.png',
-                 'cake_a.png',
-                 'chain2r_sp.png'
-                 # these are the doors at the end of the game. Can't remove them because it has the scrolling effect,
-                 # and need to maintain consistency with that effect
-                 'm_door4.png',
-                 'm_door4_l.png',
-                 'm_door4c.png'
-                 'm_door4l.png',
-                 ]
+forced_ignore = [
+'anm_no0019b.png',
+'anm_no0020a.png',
+'blue.png',
+'cake_a.png',
+'chain2r_sp.png',
+# these are the doors at the end of the game. Can't remove them because it has the scrolling effect,
+# and need to maintain consistency with that effect
+'m_door4.png',
+'m_door4_l.png',
+'m_door4c.png',
+'m_door4l.png',
+'door_00096.png', #: r'bmp\background\garden\m_door4.png',
+# end doors
+# these are the portraits - they are identical in both versions of the game, but the ps3 ones are higher res
+'portrait1.png',
+'portrait2.png',
+'portrait3.png',
+#'portrait4.png', #this is never used in the Answer arcs I think
+'portrait5.png',
+'portrait6.png',
+'red.png', #this is like a blood/cloud background image with a texture on it.
+]
 
 # Image which were replaced kind of properly but need fixing
+#'fea_k3_green' - fea meta with eyes overlaid - mg has no eyes
+#'fea_l4_green' - fea meta with eyes overlaid - mg has no eyes
 #'goas_eye2c_cha'  # I think a custom image needs to be made for this one - it's eyes overlaid on the dark chapel 'cha'
 #'goas_eye2c_cha2'
 #'m_door1_nega' - negative colored door image...
+#'hibun' - no matching mg image?
+#'m_door2hp' - door with purple metaworld effect
+#'mbat_1ap' - bath with purple metaworld effect
+#'view_efe2_full' - These two images are peeking through door images. on their own their replacement is fine, but there
+#'view_efe3_fill'   is an effect later on when you can see through a gap in the door, which only has a ps3 version currently.
+#'mlib_1f' - image of window which rudolf breaks into
+#'mlib_1f_r' - image of window which rudolf breaks into, with rudolf in the picture
+#'moon_1p_1' - image of moon with siloute of rosa with gun
+#'moon_1p_2' - image of moon with rosa with gun
+
+forced_overrides_used = set()
+for k,v in forced_overrides.items():
+    forced_overrides_used.add(k)
+
+forced_ignore_used = set(forced_ignore)
 
 with open('simple_bg_mapping.txt', 'w') as simple_bg_mapping_file:
     for ps3_path, mangagamer_path in best_ps3_to_mg_mapping + alternative_mg_to_ps3_paths:
@@ -216,11 +264,24 @@ with open('simple_bg_mapping.txt', 'w') as simple_bg_mapping_file:
 
         override = forced_overrides.get(ps3_path, None)
         if override:
+            print(f'Forced Override "{ps3_path}" old: {mangagamer_path} new: {override}')
+            if not check_mg_path_exists(override):
+                print(f"!!!!!! WARNING: override path {override} doesn't exist !!!!!!! ")
             mangagamer_path = override
+            forced_overrides_used.remove(ps3_path)
+
 
         if ps3_path in forced_ignore:
             print(f"Manually ignored ps3 path {ps3_path}")
+            forced_ignore_used.remove(ps3_path)
             continue
 
         simple_bg_mapping_file.write(f'{ps3_path}|{mangagamer_path}\n')
 
+if len(forced_overrides_used) > 0:
+    print("WARNING: the following forced overrides were not used:")
+    print(forced_overrides_used)
+
+if len(forced_ignore_used) > 0:
+    print("WARNING: the following ignores were not used")
+    print(forced_ignore_used)
