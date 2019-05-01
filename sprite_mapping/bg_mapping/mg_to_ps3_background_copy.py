@@ -5,10 +5,10 @@ whitelist_paths = ['wsan_', 'wclo_', 'zf_', 'the_', 'different_']
 
 output_base_path = r'c:\temp\ps3_bg_output'
 old_sprite_base_path = r'C:\temp\umiconv'
-#
-# if os.path.exists('input'):
-#     output_base_path = 'ps3_output'
-#     old_sprite_base_path = 'input'
+
+if os.path.exists('input'):
+    output_base_path = 'ps3_output'
+    old_sprite_base_path = 'input'
 
 debug_expected_old_path = os.path.join(old_sprite_base_path, 'bmp')
 if not os.path.exists(debug_expected_old_path):
