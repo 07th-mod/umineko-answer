@@ -258,26 +258,31 @@ for k,v in forced_overrides.items():
 
 forced_ignore_used = set(forced_ignore)
 
+name_output_line_tuples = []
+
+for ps3_path, mangagamer_path in best_ps3_to_mg_mapping + alternative_mg_to_ps3_paths:
+    if mangagamer_path in ['black.png', 'white.png'] or ps3_path in ['black.png', 'white.png']:
+        continue
+
+    override = forced_overrides.get(ps3_path, None)
+    if override:
+        print(f'Forced Override "{ps3_path}" old: {mangagamer_path} new: {override}')
+        if not check_mg_path_exists(override):
+            print(f"!!!!!! WARNING: override path {override} doesn't exist !!!!!!! ")
+        mangagamer_path = override
+        forced_overrides_used.remove(ps3_path)
+
+
+    if ps3_path in forced_ignore:
+        print(f"Manually ignored ps3 path {ps3_path}")
+        forced_ignore_used.remove(ps3_path)
+        continue
+
+    name_output_line_tuples.append((ps3_path, f'{ps3_path}|{mangagamer_path}\n'))
+
 with open('simple_bg_mapping.txt', 'w') as simple_bg_mapping_file:
-    for ps3_path, mangagamer_path in best_ps3_to_mg_mapping + alternative_mg_to_ps3_paths:
-        if mangagamer_path in ['black.png', 'white.png'] or ps3_path in ['black.png', 'white.png']:
-            continue
-
-        override = forced_overrides.get(ps3_path, None)
-        if override:
-            print(f'Forced Override "{ps3_path}" old: {mangagamer_path} new: {override}')
-            if not check_mg_path_exists(override):
-                print(f"!!!!!! WARNING: override path {override} doesn't exist !!!!!!! ")
-            mangagamer_path = override
-            forced_overrides_used.remove(ps3_path)
-
-
-        if ps3_path in forced_ignore:
-            print(f"Manually ignored ps3 path {ps3_path}")
-            forced_ignore_used.remove(ps3_path)
-            continue
-
-        simple_bg_mapping_file.write(f'{ps3_path}|{mangagamer_path}\n')
+    for name, output_line in sorted(name_output_line_tuples, key=operator.itemgetter(1)):
+        simple_bg_mapping_file.write(output_line)
 
 if len(forced_overrides_used) > 0:
     print("WARNING: the following forced overrides were not used:")
