@@ -172,24 +172,34 @@ for i, (ps3_path, _) in enumerate(best_ps3_to_mg_mapping):
 
 ########################################################################################################################
 
-forced_overrides = {'door_00096.png': r'bmp\background\garden\m_door4.png',
-                    'fea_r1ij.png': r'bmp\background\fea\fea_r1j.png',
-                    'garden_1cp.png': r'bmp\background\garden\garden_1c.png',
-                    'm_door3k.png': r'bmp\background\mainbuilding\m_door2.png',
-                    'm_door5.png': r'bmp\background\mainbuilding\m_door1.png',  #this is an image of a door with tape with a bernkastel's name on it
-                    'garden_1a.png' : r'bmp\background\garden\garden_1br.png',  #rain - building and roses
-                    'garden_1ac.png' : r'bmp\background\garden\garden_1b.png',  #normal
-                    'garden_1af.png' : r'bmp\background\garden\garden_1b.png',  #bright
-                    'garden_1ar.png' : r'bmp\background\garden\garden_1bn.png',  #night
-                    'garden_1c.png': r'bmp\background\garden\garden_1cr.png',  # rain - building and roses
-                    'garden_1cc.png': r'bmp\background\garden\garden_1c.png',  # normal
-                    'garden_1cf.png': r'bmp\background\garden\garden_1c.png',  # bright
-                    'garden_1cn.png': r'bmp\background\garden\garden_1cn.png',  # night
-                    'garden_r1a.png': r'bmp\background\garden\garden_r1ar.png',  # rain - building and roses
-                    'garden_r1ac.png': r'bmp\background\garden\garden_r1a.png',  # normal
-                    'garden_r1af.png': r'bmp\background\garden\garden_r1a.png',  # bright
-                    'garden_r1an.png': r'bmp\background\garden\garden_r1an.png',  # night
-                    }
+forced_overrides = {
+'fea_r1ij.png': r'bmp\background\fea\fea_r1j.png',
+'garden_1cp.png': r'bmp\background\garden\garden_1c.png',
+'m_door3k.png': r'bmp\background\mainbuilding\m_door2.png',
+'m_door5.png': r'bmp\background\mainbuilding\m_door1.png',  #this is an image of a door with tape with a bernkastel's name on it
+'garden_1a.png' : r'bmp\background\garden\garden_1br.png',  #rain - building and roses
+'garden_1ac.png' : r'bmp\background\garden\garden_1b.png',  #normal
+'garden_1af.png' : r'bmp\background\garden\garden_1b.png',  #bright
+'garden_1ar.png' : r'bmp\background\garden\garden_1bn.png',  #night
+'garden_1c.png': r'bmp\background\garden\garden_1cr.png',  # rain - building and roses
+'garden_1cc.png': r'bmp\background\garden\garden_1c.png',  # normal
+'garden_1cf.png': r'bmp\background\garden\garden_1c.png',  # bright
+'garden_1cn.png': r'bmp\background\garden\garden_1cn.png',  # night
+'garden_r1a.png': r'bmp\background\garden\garden_r1ar.png',  # rain - building and roses
+'garden_r1ac.png': r'bmp\background\garden\garden_r1a.png',  # normal
+'garden_r1af.png': r'bmp\background\garden\garden_r1a.png',  # bright
+'garden_r1an.png': r'bmp\background\garden\garden_r1an.png',  # night
+'gdin_1ad.png': r'bmp\background\guesthouse\gdin_1b.png',
+'gdin_1ad2.png': r'bmp\background\guesthouse\gdin_1c.png',
+'m_o2a.png': r'bmp\background\guesthouse\m_o1b.png',
+'m_o2an.png': r'bmp\background\guesthouse\m_o1bn.png',
+'m_o2an_r.png': r'bmp\background\guesthouse\m_o1br.png',
+'m_o2ar.png': r'bmp\background\guesthouse\m_o1br.png',
+'m1f_r1a':r'bmp\background\guesthouse\g1f_r1a.png', #desk normal
+'m1f_r1af':r'bmp\background\guesthouse\g1f_r1a.png', #desk bright
+'m1f_r1am':r'bmp\background\guesthouse\g1f_r1an.png', #desk night
+'m1f_r1ar':r'bmp\background\guesthouse\g1f_r1ar.png', #desk rain
+}
 
 forced_ignore = ['anm_no0019b.png',
                  'anm_no0020a.png',
@@ -202,12 +212,19 @@ forced_ignore = ['anm_no0019b.png',
                  'm_door4_l.png',
                  'm_door4c.png'
                  'm_door4l.png',
+                 'door_00096.png', #: r'bmp\background\garden\m_door4.png',
+                 # end doors
                  ]
 
 # Image which were replaced kind of properly but need fixing
+#'fea_k3_green' - fea meta with eyes overlaid - mg has no eyes
+#'fea_l4_green' - fea meta with eyes overlaid - mg has no eyes
 #'goas_eye2c_cha'  # I think a custom image needs to be made for this one - it's eyes overlaid on the dark chapel 'cha'
 #'goas_eye2c_cha2'
 #'m_door1_nega' - negative colored door image...
+#'hibun' - no matching mg image?
+#'m_door2hp' - door with purple metaworld effect
+#'mbat_1ap' - bath with purple metaworld effect
 
 with open('simple_bg_mapping.txt', 'w') as simple_bg_mapping_file:
     for ps3_path, mangagamer_path in best_ps3_to_mg_mapping + alternative_mg_to_ps3_paths:
