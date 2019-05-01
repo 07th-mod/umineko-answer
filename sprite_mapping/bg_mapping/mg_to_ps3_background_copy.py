@@ -1,7 +1,11 @@
 import os
 import shutil
 
-whitelist_paths = ['wsan_', 'wclo_', 'zf_', 'the_', 'different_']
+#MUST BE ALL LOWERCASE
+always_copy = ['ebook1.png', 'chess1.png', 'chess2.png', 'letter1.png', 'rose_t1a.png'] #these may or may not be considered backgrounds
+
+whitelist_paths = ['wsan_', 'wclo_', 'zf_', 'the_', 'different_', #these are definitely backgrounds
+                   'chess', 'doll_', 'gold', 'gun_', 'key'] #these may or may not be considered backgrounds
 
 output_base_path = r'c:\temp\ps3_bg_output'
 old_sprite_base_path = r'C:\temp\umiconv'
@@ -27,15 +31,16 @@ with open('simple_bg_mapping.txt', 'r') as simple_bg_mapping_file:
         full_mg_bg_path = os.path.join(old_sprite_base_path, mg_path)
         full_ps3_bg_path = os.path.join(output_base_path, ps3_path)
 
-        if '\\efe\\' in mg_path:
-            whitelisted = False
-            for whitelist_path in whitelist_paths:
-                if whitelist_path in mg_path.lower():
-                    whitelisted = True
+        if ps3_path.lower() not in always_copy:
+            if '\\efe\\' in mg_path:
+                whitelisted = False
+                for whitelist_path in whitelist_paths:
+                    if whitelist_path in mg_path.lower():
+                        whitelisted = True
 
-            if not whitelisted:
-                print("skipping efe file", mg_path)
-                continue
+                if not whitelisted:
+                    print("skipping efe file", mg_path)
+                    continue
 
         if not os.path.exists(full_mg_bg_path):
             print(f"Old sprite missing! {full_mg_bg_path}")
