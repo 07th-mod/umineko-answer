@@ -208,7 +208,8 @@ forced_overrides = {
 'cha_i1ed.png': r'bmp\background\chapel\cha_i1j.png', #chapel stained glass window
 'cha_i1ny.png': r'bmp\background\chapel\cha_i1n.png', #chapel pews
 'm2f_r7a.png':r'bmp\background\mainbuilding\m2f_r1d.png',    #lamp
-'m2f_r7ar.png':r'bmp\background\mainbuilding\m2f_r1dr.png'    #lamp
+'m2f_r7ar.png':r'bmp\background\mainbuilding\m2f_r1dr.png',    #lamp
+'cha_hisp.png': r'bmp\background\chapel\cha_i1j.png', #coffin in chapel, no purple effect
 }
 
 forced_ignore = [
