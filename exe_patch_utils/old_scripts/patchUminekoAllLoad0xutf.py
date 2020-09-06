@@ -23,7 +23,7 @@ for file_to_patch in get_input_files():
         string_replacements_required = [
         (b'0.utf', b'0.u\x00\x00', 1),  #this forces game to check for '0.ut', and only run if that file exists
         (b'%d.%s', b'%dx%s', 1),        #this prevents 0.utf being loaded
-        (b'%02d.%s', b'%d.%.1s', 1),    #this loads the files 0.ut, 1.ut, 2.ut ...
+        (b'%02d.%s', b'%d.%.1s', 1),    #this loads the files 0.ut, 1.ut, 2.ut ... #Is it valid to have %.1s ? %1s is valid, but %.1s doesn't seem to be....
         (b'saves/', b'mysav/', 2),      #this changes the save folder location
         ]
 
