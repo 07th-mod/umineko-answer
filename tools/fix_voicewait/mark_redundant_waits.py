@@ -1,5 +1,18 @@
 from typing import List
 import re
+import os
+import subprocess
+import sys
+
+def isWindows():
+    return sys.platform == "win32"
+
+def call(args, **kwargs):
+    print("running: {}".format(args))
+    retcode = subprocess.call(args, shell=isWindows(), **kwargs)  # use shell on windows
+    if retcode != 0:
+        raise SystemExit(retcode)
+
 
 class Lexeme:
 	def __init__(self, type, text):
@@ -94,7 +107,16 @@ class Processor:
 
 
 if __name__ == '__main__':
-	with open("decoded.txt", 'r', encoding='utf-8') as map:
+	if not os.path.exists('PonscripterParser.exe'):
+		raise SystemExit("PonscripterParser.exe not found. Please download it from https://github.com/drojf/ponscripter_parser/releases/latest")
+
+	ponscripter_nodes_filename = "ponscripter_script_nodes.txt"
+	if os.path.exists(ponscripter_nodes_filename):
+		os.remove(ponscripter_nodes_filename)
+
+	call(['PonscripterParser.exe', '../../0.utf'])
+
+	with open(ponscripter_nodes_filename, 'r', encoding='utf-8') as map:
 		map_temp = map.readlines()
 
 	map_lines = []
