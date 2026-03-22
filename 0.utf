@@ -9201,7 +9201,7 @@ langen:dwave_eng 0, "voice\02\50800078.ogg":^"I trust them.^@:dwave_eng 0, "voic
 _ld l,":b;sprites\cla\1\cla_a11_komaru3.png",80
 
 langjp:dwave_jp 0, "voice\02\50800081.ogg":「ここで渋ったらどうなる？@:dwave_jp 0, "voice\02\50800082.ogg":　自分の事業に、自分で自信が持てないことになるだろう？！」\
-langen:dwave_eng 0, "voice\02\50800081.ogg":^"What happens if I hesitate now?^@:dwave_eng 0, "voice\02\50800082.ogg":^  Wouldn't that mean even I have no confidence in my own business?!"^\
+langen:dwave_eng 0, "voice\02\50800081.ogg":^What happens if I hesitate now?^@:dwave_eng 0, "voice\02\50800082.ogg":^  Wouldn't that mean even I have no confidence in my own business?!"^\
 
 _ld r,":b;sprites\nat\1\nat_a12_nayamu3.png",80
 
@@ -9258,7 +9258,7 @@ langjp　だから、多少、法に触れることになろうとも、すぐ�
 langen^So, he had figured that even if he stepped over a few legal lines, ^@^he would be able to pay everything back before too long and pretend that the whole thing had never happened.^@
 br
 langjp　……だからこそ、触法に対する抵抗感が少なかったのかもしれない。\
-langen^...This may gave been the factor that lessened his resistance towards breaking a couple laws.^\
+langen^...This may have been the factor that lessened his resistance towards breaking a couple laws.^\
 
 langjp　そして、金蔵の死という最悪の現実を迎え、それが隠し切れなくなろうとしている……。\
 langen^And now Kinzo's death, the worst possible thing, had occurred, ^@^and they wouldn't be able to keep it all hidden for long...^\
@@ -25848,7 +25848,7 @@ _ld l,":b;sprites\eva\1\eva_a11_futeki1.png",23
 
 langjp:dwave_jp 0, "voice\05\51000174.ogg":「うっふっふっふ！！@:dwave_jp 0, "voice\05\51000175.ogg":　そうよ、右代宮家当主の指輪よ！！」\
 ;＜絵羽
-langen:dwave_eng 0, "voice\05\51000174.ogg":^"Heheheheh!!^@:dwave_eng 0, "voice\05\51000175.ogg":^  That's right, it's the Ushiromiya Family Head's Ring!!^\
+langen:dwave_eng 0, "voice\05\51000174.ogg":^"Heheheheh!!^@:dwave_eng 0, "voice\05\51000175.ogg":^  That's right, it's the Ushiromiya Family Head's Ring!!"^\
 
 bg black,22
 
@@ -64571,7 +64571,7 @@ langjp　戦人の周囲に、光のカケラが、まるで天体のように�
 langen^Around Battler was a swirl of glowing Fragments, sparkling like the night sky,^@^ ...and on the floor was what appeared to be a red magic circle.^\
 
 langjp　それは傍目には理解の出来ない幾何学模様に過ぎない。@
-langen^To an outsider, it would seem to be nothing more than a incomprehensible geometric shape.^@
+langen^To an outsider, it would seem to be nothing more than an incomprehensible geometric shape.^@
 br
 langjp　しかし、その中心に立つ戦人にとっては、@新しき物語の筋書きそのものなのだ…。\
 langen^But to Battler, who stood at its center,^@^ it was the outline for a new tale...^\
@@ -118337,7 +118337,7 @@ langjp:dwave_jp 0, "voice\15\60500361.ogg":!d900………あなたを愛する�
 langen:dwave_eng 0, "voice\15\60500357.ogg":^"...George-san,^@:dwave_eng 0, "voice\15\60500358.ogg":^ ...we've...won.^@/
 langen:dwave_eng 0, "voice\15\60500359.ogg":!s1^  ...Now,^@/
 langen:delay 1200:dwave_eng 0, "voice\15\60500360.ogg":^ ...I finally have the right...^@/
-langen:delay 1800:dwave_eng 0, "voice\15\60500361.ogg":^...to love you..."^@:dwave_eng 0, "voice\15\60500362.ogg":^ Finally...^@/
+langen:delay 1800:dwave_eng 0, "voice\15\60500361.ogg":^...to love you...^@:dwave_eng 0, "voice\15\60500362.ogg":^ Finally..."^@/
 langjp!sd\
 langen!sd\
 
@@ -127835,7 +127835,7 @@ langjp:dwave_jp 0, "voice\10\70100002.ogg":「……これは、俺からお前�
 langjp:dwave_jp 0, "voice\10\70100003.ogg":!d900……唯一の物語だ。」@
 ;＜戦人
 langen:dwave_eng 0, "voice\10\70100002.ogg":^"...This is...^@/
-langen:delay 3000:dwave_eng 0, "voice\10\70100003.ogg":^the sole tale I have to offer up you."^@
+langen:delay 3000:dwave_eng 0, "voice\10\70100003.ogg":^the sole tale I have to offer up to you."^@
 br
 langjp　この物語は、お前と一緒に、永遠に棺に閉ざされる。@
 langen^This tale will be shut up with you in your coffin, for all eternity.^@
@@ -131324,7 +131324,7 @@ _ld c,":b;sprites\ros\1\ros_a11_komaru4.png",80
 
 langjp:dwave_jp 0, "voice\12\71400052.ogg":「でも、あの日の私は気にしなかった。@:dwave_jp 0, "voice\12\71400053.ogg":……森の奥へ消えることで、永遠に消えてしまいたかったし。@:dwave_jp 0, "voice\12\71400054.ogg":……もし、本当に森の奥に魔女の館があったなら、@:dwave_jp 0, "voice\12\71400055.ogg":……自分を幸せの国へ連れて行ってくれるか、蛙にでも変えて、森の住人に変えてくれると思っていたから。」\
 ;＜楼座
-langen:dwave_eng 0, "voice\12\71400052.ogg":^"However, that wasn't enough to bother me on that day.^@:dwave_eng 0, "voice\12\71400053.ogg":^  ...After all, I wanted to disappear into the forest and vanish forever.^@:dwave_eng 0, "voice\12\71400054.ogg":^  ...If, by some chance, there really was a witch's mansion in the depths of the forest,^@:dwave_eng 0, "voice\12\71400055.ogg":^ ...I hoped that she might take me to the some paradise, or else turn me into a frog and make me a resident of the forest."^\
+langen:dwave_eng 0, "voice\12\71400052.ogg":^"However, that wasn't enough to bother me on that day.^@:dwave_eng 0, "voice\12\71400053.ogg":^  ...After all, I wanted to disappear into the forest and vanish forever.^@:dwave_eng 0, "voice\12\71400054.ogg":^  ...If, by some chance, there really was a witch's mansion in the depths of the forest,^@:dwave_eng 0, "voice\12\71400055.ogg":^ ...I hoped that she might take me to some paradise, or else turn me into a frog and make me a resident of the forest."^\
 
 bg new_cha_r1b,0
 _ld r,":b;sprites\wil\1\wil_a11_majime2.png",24
@@ -143785,7 +143785,7 @@ langjp　どうか、私たちを祟らないで下さいという、お供え�
 langen^It looked like an offering...no, like some sort of worship,^@^ a prayer saying `please don't curse us'...^@
 br
 langjp　……だから、人形そのものも充分に不気味だったが、@……こんなところに安置され、敬われているということそのものが、生理的に気持ち悪かった。\
-langen^...So, even though the doll was more than eerie enough by itself,^@^ ...viscerally, it was even more unnerving to imagine it being been kept safe and worshiped in a place like this.^\
+langen^...So, even though the doll was more than eerie enough by itself,^@^ ...viscerally, it was even more unnerving to imagine it having been kept safe and worshiped in a place like this.^\
 
 bg black,2
 
@@ -143885,7 +143885,7 @@ langjp　森の魔女の話は、子供が森に近付いて迷子にならな�
 langen^The story of the witch of the forest was made up by the adults to prevent their kids from getting lost in the woods.^@^  But that was just a made-up story, not reality.^@
 br
 langjp　いや、そもそも昔は、森に出るのは狼だって脅されてたらしい。@狼なんて、いるわけないって子供たちが気付いたので、魔女に話を切り替えたらしい。\
-langen^In fact, I've heard that the adults here once scared the kids with stories about about wolves living in the forest.^@^  Apparently, the kids realized that wolves couldn't possibly be there, so it was changed to the witch.^\
+langen^In fact, I've heard that the adults here once scared the kids with stories about wolves living in the forest.^@^  Apparently, the kids realized that wolves couldn't possibly be there, so it was changed to the witch.^\
 
 bg black,22
 
@@ -147012,7 +147012,7 @@ langjp　だから、私以外の年上の新入りたちは、彼女と面識�
 langen^That's probably why all the other new servants, who are older than me, seem to know her well.^@
 br
 langjp　奥様厳しそうっすねー、マジ疲れましたー、きゃっきゃと騒いでいる。\
-langen^`That Madam looks so strict.'  `Dang, I'm tired.`  `*giggle*giggle*.'^\
+langen^`That Madam looks so strict.'  `Dang, I'm tired.'  `*giggle*giggle*.'^\
 
 ;se1 47
 cl l,0
@@ -154620,7 +154620,7 @@ langjp:dwave_jp 0, "voice\15\70500221.ogg":!s1「………私、/
 langjp:dwave_jp 0, "voice\15\70500222.ogg":!d500疲れてる、@:dwave_jp 0, "voice\15\70500223.ogg":……のかな。」/
 
 langen:dwave_eng 0, "voice\15\70500221.ogg":!s1^"...Am I just...^@/
-langen:delay 1600:dwave_eng 0, "voice\15\70500222.ogg":^...tired?"^@:dwave_eng 0, "voice\15\70500223.ogg":^  ...I wonder.^@/
+langen:delay 1600:dwave_eng 0, "voice\15\70500222.ogg":^...tired?^@:dwave_eng 0, "voice\15\70500223.ogg":^  ...I wonder."^@/
 langjp!sd\
 langen!sd\
 
@@ -157455,12 +157455,12 @@ langjp:dwave_jp 0, "voice\15\70500375.ogg":!d700……ですから…、/
 langjp:dwave_jp 0, "voice\15\70500376.ogg":!d600来年……。」@
 langen:dwave_eng 0, "voice\15\70500374.ogg":^"...S-^@/
 langen:delay 900:dwave_eng 0, "voice\15\70500375.ogg":^So, ^@/
-langen:delay 1000:dwave_eng 0, "voice\15\70500376.ogg":^...next year..."^@
+langen:delay 1000:dwave_eng 0, "voice\15\70500376.ogg":^...next year...^@
 br
 langjp:dwave_jp 0, "voice\15\70500377.ogg":　きっと、/
 langjp:dwave_jp 0, "voice\15\70500378.ogg":!d900……迎えに来て下さいね……？/
 langen:dwave_eng 0, "voice\15\70500377.ogg":^Please,^@/
-langen:delay 1200:dwave_eng 0, "voice\15\70500378.ogg":^ ...come for me, okay...?^@/
+langen:delay 1200:dwave_eng 0, "voice\15\70500378.ogg":^ ...come for me, okay...?"^@/
 langjp!sd@
 langen!sd@
 
@@ -186069,7 +186069,7 @@ _ld l,":b;sprites\en2\1\en2_a11_def2b.png",23
 
 langjp:dwave_jp 0, "voice\11\82000599.ogg":「挑発しないでー。@:dwave_jp 0, "voice\11\82000600.ogg":簡単なのがいいー！」\
 ;＜縁寿
-langen:dwave_eng 0, "voice\11\82000599.ogg":^"Don't provoke him!^@:dwave_eng 0, "voice\11\82000600.ogg":^  I want a easy one!"^\
+langen:dwave_eng 0, "voice\11\82000599.ogg":^"Don't provoke him!^@:dwave_eng 0, "voice\11\82000600.ogg":^  I want an easy one!"^\
 
 _ld r,":b;sprites\kan\1\kan_a11_nayamu1.png",24
 
@@ -187798,7 +187798,7 @@ langjp:dwave_jp 0, "voice\13\80400136.ogg":「うーうーうー……。」@
 langen:dwave_eng 0, "voice\13\80400136.ogg":^"Uu-uu-uu-..."^@
 br
 langjp　不機嫌な犬のように唸りながら、渋々とメダルを差し出す。@
-langen^Whining like a unhappy dog, she reluctantly handed the medal over.^@
+langen^Whining like an unhappy dog, she reluctantly handed the medal over.^@
 br
 langjp　それを引ったくり、私も犬のように大はしゃぎで喜ぶ。\
 langen^I grabbed it and started jumping around like a happy dog.^\
@@ -264244,7 +264244,7 @@ _ld c,":b;sprites\ber\1\ber_a21_warai1.png",22
 _ld c,":b;sprites\ber\1\ber_a21_warai4.png",80
 
 langjp:dwave_jp 0, "voice\28\72100557.ogg":「さぁ、ベアトのゲーム盤の駒たち……？@:dwave_jp 0, "voice\28\72100558.ogg":　私を最高に楽しませる、最高に残虐な物語を紡がせてあげるわ。@:dwave_jp 0, "voice\28\72100559.ogg":慄きなさい、約束された絶対の運命を。@:dwave_jp 0, "voice\28\72100560.ogg":……奇跡の魔女、ベルンカステルの名において。@:dwave_jp 0, "voice\28\72100561.ogg":……そして、ベアトのゲームの、最後のゲームマスターとして宣言するわ。」\
-langen:dwave_eng 0, "voice\28\72100557.ogg":^"Hey, pieces of Beato's game...?^@:dwave_eng 0, "voice\28\72100558.ogg":^  I'm gonna have you spin a incredibly brutal tale that I'll find incredibly entertaining.^@:dwave_eng 0, "voice\28\72100559.ogg":^  Tremble in fear of the certain fate you've been promised.^@:dwave_eng 0, "voice\28\72100560.ogg":^  ...By the name of Bernkastel, Witch of Miracles,^@:dwave_eng 0, "voice\28\72100561.ogg":^ ...and as the final Game Master of Beato's game, I proclaim it."^\
+langen:dwave_eng 0, "voice\28\72100557.ogg":^"Hey, pieces of Beato's game...?^@:dwave_eng 0, "voice\28\72100558.ogg":^  I'm gonna have you spin an incredibly brutal tale that I'll find incredibly entertaining.^@:dwave_eng 0, "voice\28\72100559.ogg":^  Tremble in fear of the certain fate you've been promised.^@:dwave_eng 0, "voice\28\72100560.ogg":^  ...By the name of Bernkastel, Witch of Miracles,^@:dwave_eng 0, "voice\28\72100561.ogg":^ ...and as the final Game Master of Beato's game, I proclaim it."^\
 
 _ld c,":b;sprites\ber\1\ber_a21_akuwarai2.png",80
 
