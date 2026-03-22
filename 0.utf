@@ -237280,7 +237280,7 @@ return
 
 	;初期化
 bg new_Different_space_2d,0
-
+cl a,0
 	csp 998
 	csp 760
 	csp 761
@@ -237297,7 +237297,7 @@ bg new_Different_space_2d,0
 	;ストーリー読み返しフラグ。
 	mov %murder_s_flg ,1 
 
-				cl a,0
+				;cl a,0 ; moved this clear before the 'print 62' to prevent crash on experimental exe
 				se3 1001
 				csp 852 ;キャラ選択のスイッチ画像
 				csp 853 ;各章選択のスイッチ画像

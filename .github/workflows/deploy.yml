@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Download the 'master' script repo (contains full and voice-only scripts)
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: master
           path: master
 
       # Download the 'adv_mode' script repo (contains only adv-mode script)
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: adv_mode
           path: adv_mode
