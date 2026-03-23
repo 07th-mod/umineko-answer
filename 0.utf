@@ -196910,7 +196910,7 @@ mcbg 22
 
 langjp:dwave_jp 0, "voice\29\82200121.ogg":「針が混じってるかもしれないパンを、そのまま丸呑みにして食べる馬鹿はいないわ。」@
 ;＜ラムダ
-langen:dwave_eng 0, "voice\29\82200121.ogg":^"Even the dumbest idiot wouldn't try swallowing a roll whole if there might be needle inside."^@
+langen:dwave_eng 0, "voice\29\82200121.ogg":^"Even the dumbest idiot wouldn't try swallowing a roll whole if there might be a needle inside."^@
 
 _ld r,":b;sprites\bea\1\bea_a11_majime1.png",80
 
@@ -227823,7 +227823,7 @@ langjp　ドラノールの髪が、憤怒で吹き上がる。@
 langen^Dlanor's hair bristled with rage.^@
 br
 langjp　一度は友と呼んだ彼女のその形相に、……ヱリカは足が竦むのを覚えた。\
-langen^The sight this expression on one of her old friends...pinned Erika to the spot.^\
+langen^The sight of this expression on one of her old friends...pinned Erika to the spot.^\
 
 langjp:dwave_jp 0, "voice\47\84600078.ogg":「我が友ヨ。@:dwave_jp 0, "voice\47\84600079.ogg":……痛みさえわからぬ内に、私があなたを解放しマショウ。@:dwave_jp 0, "voice\47\84600080.ogg":あなたが、これ以上の罪を背負わぬようにデス！！！」\
 ;＜ドラノ
@@ -264910,7 +264910,7 @@ _ld r,":b;sprites\eri\1\eri_a11_akuwarai2.png",80
 
 langjp:dwave_jp 0, "voice\46\84500508.ogg":「はい、我が主！！@:dwave_jp 0, "voice\46\84500509.ogg":　私の華麗なるお箸さばきを、どうかご覧下さいっ！！」\
 ;＜ヱリカ
-langen:dwave_eng 0, "voice\46\84500508.ogg":^"Yes, my master!!^@:dwave_eng 0, "voice\46\84500509.ogg":^  Please watch my fantastic chopstick-weilding skills!!"^\
+langen:dwave_eng 0, "voice\46\84500508.ogg":^"Yes, my master!!^@:dwave_eng 0, "voice\46\84500509.ogg":^  Please watch my fantastic chopstick-wielding skills!!"^\
 
 _ld r,":b;sprites\eri\1\eri_a11_hanbeso1.png",80
 
