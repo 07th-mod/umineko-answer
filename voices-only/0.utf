@@ -175,11 +175,11 @@ numalias savemodePage,3001         ;セーブ画面ページ収得エリア
 numalias savedataTime,3100          ;セーブデータ用時間データ文字エリア
 numalias savedataComment,3200          ;セーブデータ用コメントエリア
 numalias savedataflg,3300          ;セーブデータ用グローバルエリア
-
 ;3500以上はあけておく
 numalias seventh_state, 3500
 numalias musicVolume, 3501
 numalias voiceVolume, 3502
+numalias dropShadow, 3506 ; Note: numalias 3503-3505 are used in the full script
 numalias scenario1_1,101   ;キャラクター説明フラグ値　シナリオ１進行度１
 numalias scenario1_2,102   ;キャラクター説明フラグ値　シナリオ１進行度２
 
@@ -4157,14 +4157,14 @@ defsub cbfly
 defsub RG_set
 defsub RG_start
 defsub RG_start_f
-
 ;ジャンプシステム
 defsub jump_set
 defsub jump_start
-
 ;立ち位置の座標を取得する命令
 defsub tati_x_get
 
+defsub update_dropshadow
+defsub toggle_dropshadow
 ;defsub texton
 ;defsub textoff
 pretextgosub *pretext
@@ -4192,10 +4192,10 @@ game
 *Start
 saveoff
 seventh_change_voice_level 0 ;initialize voice volume
+update_dropshadow
 setwindow 31,16,25,20,23,23,0,2,20,1,1,#999999,0,0,639,479
 lsph TextCC1SpNum,":bl/3,160,2;bmp\cursor0.png",0,0
 lsph TextCC2SpNum,":bl/3,160,2;bmp\cursor1.png",0,0
-
 notif %cur_language = 1 jumpf
 showlangjp
 ~
@@ -292550,7 +292550,7 @@ csp r_system_lsp
 ^Voices: /
 %voiceVolume /
 ^ Def: 51
-select "^Music/SoundEffect+",*seventh_music_plus,"^Music/SoundEffect-",*seventh_music_minus, "^Voice+",*seventh_voice_plus,"^Voice-",*seventh_voice_minus, "^Exit", *seventh_menu_exit
+select "^Music/SoundEffect+",*seventh_music_plus,"^Music/SoundEffect-",*seventh_music_minus, "^Voice+",*seventh_voice_plus,"^Voice-",*seventh_voice_minus, "^Toggle Drop Shadow", *seventh_toggle_dropshadow, "^Exit", *seventh_menu_exit
 
 *seventh_music_plus
 add %musicVolume, 3
@@ -292573,6 +292573,12 @@ jumpf
 seventh_change_voice_level -3
 dwave 0, "voice\27\50700001.ogg"
 jumpf
+
+*seventh_toggle_dropshadow
+toggle_dropshadow
+seplay 9,1001
+jumpf
+
 
 ~
 goto *seventh_menu_loop
@@ -314439,6 +314445,31 @@ if %seventh_state > 0 jumpf
     bg black,9
 ~
 
+if %seventh_state > 1 jumpf
+    ; need to reset font size/pos so drop shadow can be compared properly
+    setwindow 75,32,35,20,15,15,0,2,20,1,1,#999999,0,0,853,479 ;utmeta-ignore
+    bg beach_2a,9
+    textspeed 0
+
+*seventh_state_1_loop
+    ^2026-09-06: The Drop Shadow Thickness option has been added^
+    ^Toggle drop shadow here. Press "Exit" when finished.^
+    ^Later you can also use the mod menu to toggle drop shadow^
+    br
+
+    select "^> Toggle Drop Shadow",*seventh_state_1_toggle, "^> Exit",*seventh_state_1_finished
+    goto *seventh_state_1_loop
+
+*seventh_state_1_toggle
+    toggle_dropshadow
+    goto *seventh_state_1_loop
+
+*seventh_state_1_finished
+    btndef ""
+    mov %seventh_state, 2
+    bg black,9
+~
+
 return
 
 
@@ -315527,4 +315558,14 @@ return
 
     mov %voiceVolume, %witchh7
     voicevol %voiceVolume
+return
+
+*update_dropshadow
+    if %dropShadow == 0 shadedistance 3,3
+    if %dropShadow != 0 shadedistance 1,1
+return
+
+*toggle_dropshadow
+    if %dropShadow == 0 mov %dropShadow, 1 : update_dropshadow : return
+    if %dropShadow != 0 mov %dropShadow, 0 : update_dropshadow : return
 return
